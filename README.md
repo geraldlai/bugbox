@@ -7,6 +7,16 @@ Please see Dockerfile for list of tools.
 
 Image size: ~420MB (Alpine Linux based)
 
+On Docker Hub: https://hub.docker.com/r/geraldlai/bugbox/
+
+
+Usage
+=====
+
+Start bash shell: `docker run -it geraldlai/bugbox`
+
+Run a tool: `docker run geraldlai/bugbox iostat`
+
 
 CoreOS / Container Linux usage
 ==============================

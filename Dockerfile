@@ -1,7 +1,8 @@
 FROM alpine:edge
 MAINTAINER Gerald Lai <laigera@gmail.com>
 
-ENTRYPOINT [ "/bin/bash" ]
+ENTRYPOINT [ "/sbin/dumb-init" ]
+CMD [ "/bin/bash" ]
 
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
     MANPATH=/usr/share/man \
@@ -15,6 +16,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
 # bwm-ng: bandwidth monitor (vs iftop)
 # coreutils: cp/mv/rm*, wc, uniq, sort, touch, etc.
 # dstat: multi perf monitor (vs sar, vmstat, iostat)
+# dumb-init: (vs init)
 # fcron: (vs dcron)
 # fping: parallel ping (vs ping)
 # glances: multi perf monitor
@@ -27,7 +29,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
 # mtr: (vs traceroute & ping)
 # ncdu: (vs du)
 # nmap-doc: (fix to not show German manpage)
-# procps: ps, top, vmstat, w, kill, free, etc.
+# procps: ps, top, vmstat, w, kill, free, etc. (fix busybox overrides)
 # psmisc: fuser, pstree, killall, peekfd
 # pv: pipe monitor
 # shadow: chsh, passwd, useradd, groupadd, etc. (not installed)
@@ -114,5 +116,15 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
             whois whois-doc \
             wrk wrk-doc \
             xz xz-doc \
+ && curl -sSL -o /sbin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 \
+ && chmod +x /sbin/dumb-init \
+ && ln -sf /bin/free /usr/bin/free \
+ && ln -sf /bin/pgrep /usr/bin/pgrep \
+ && ln -sf /bin/pkill /usr/bin/pkill \
+ && ln -sf /bin/pmap /usr/bin/pmap \
+ && ln -sf /bin/pwdx /usr/bin/pwdx \
+ && ln -sf /bin/top /usr/bin/top \
+ && ln -sf /bin/uptime /usr/bin/uptime \
+ && rm /usr/bin/blkdiscard \
  && bash -c 'rm -rf /usr/share/man/{de/man1/nmap.1.gz,es,fr,hr,hu,it,ja,pl,pt*,ro,ru,sk,zh}' \
  && (cd /usr/share/man/de/man1 && ln -s ../../man1/nmap.1.gz)
