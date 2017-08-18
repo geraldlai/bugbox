@@ -29,6 +29,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
 # mtr: (vs traceroute & ping)
 # ncdu: (vs du)
 # nmap-doc: (fix to not show German manpage)
+# outils: jot, rs, un/vis, calendar, apply, lndir, lam, signify
 # procps: ps, top, vmstat, w, kill, free, etc. (fix busybox overrides)
 # psmisc: fuser, pstree, killall, peekfd
 # pv: pipe monitor
@@ -86,6 +87,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
             ngrep ngrep-doc \
             nmap nmap-ncat nmap-nping nmap-scripts nmap-doc \
             openssh openssh-doc \
+            outils outils-jot outils-rs outils-vis outils-unvis outils-calendar outils-apply outils-lndir outils-lam outils-signify \
             parallel parallel-doc \
             patch patch-doc \
             patchutils patchutils-doc \
@@ -116,6 +118,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
             whois whois-doc \
             wrk wrk-doc \
             xz xz-doc \
+ && apk add -f outils-doc \
  && curl -sSL -o /sbin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 \
  && chmod +x /sbin/dumb-init \
  && ln -sf /bin/free /usr/bin/free \
