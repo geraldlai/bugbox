@@ -63,7 +63,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
             findutils findutils-doc \
             fping fping-doc arping arping-doc ioping ioping-doc \
             gawk gawk-doc \
-            git git-doc \
+            git git-perl git-doc \
             glances glances-doc \
             gnupg gnupg-doc \
             grep grep-doc \
