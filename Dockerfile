@@ -27,6 +27,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
 # iproute2: ip, bridge (vs net-tools: ifconfig, route, iptunnel, netstat)
 # libressl: (vs openssl)
 # mtr: (vs traceroute & ping)
+# nanomsg: nanocat
 # ncdu: (vs du)
 # nmap-doc: (fix to not show German manpage)
 # outils: jot, rs, un/vis, calendar, apply, lndir, lam, signify
@@ -82,6 +83,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
             mosh mosh-doc \
             mtr mtr-doc \
             nano nano-doc \
+            nanomsg nanomsg-doc \
             ncdu ncdu-doc \
             ncurses ncurses-terminfo-base \
             ngrep ngrep-doc \
