@@ -121,7 +121,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
             wrk wrk-doc \
             xz xz-doc \
  && apk add -f outils-doc \
- && curl -sSL -o /sbin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 \
+ && curl -sSL -o /sbin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 \
  && chmod +x /sbin/dumb-init \
  && ln -sf /bin/free /usr/bin/free \
  && ln -sf /bin/pgrep /usr/bin/pgrep \
