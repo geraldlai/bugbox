@@ -123,13 +123,6 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
  && apk add -f outils-doc \
  && curl -sSL -o /sbin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64 \
  && chmod +x /sbin/dumb-init \
- && ln -sf /bin/free /usr/bin/free \
- && ln -sf /bin/pgrep /usr/bin/pgrep \
- && ln -sf /bin/pkill /usr/bin/pkill \
- && ln -sf /bin/pmap /usr/bin/pmap \
- && ln -sf /bin/pwdx /usr/bin/pwdx \
- && ln -sf /bin/top /usr/bin/top \
- && ln -sf /bin/uptime /usr/bin/uptime \
  && rm /usr/bin/blkdiscard \
  && bash -c 'rm -rf /usr/share/man/{de/man1/nmap.1.gz,es,fr,hr,hu,it,ja,pl,pt*,ro,ru,sk,zh}' \
  && (cd /usr/share/man/de/man1 && ln -s ../../man1/nmap.1.gz)
