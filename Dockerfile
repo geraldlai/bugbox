@@ -18,6 +18,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
 # dstat: multi perf monitor (vs sar, vmstat, iostat)
 # dumb-init: (vs init)
 # fcron: (vs dcron)
+# fd: (vs find)
 # fping: parallel ping (vs ping)
 # glances: multi perf monitor
 # htop: (vs top, atop)
@@ -60,6 +61,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
             elinks elinks-lang elinks-doc \
             ethtool ethtool-doc \
             fcron fcron-doc \
+            fd fd-doc \
             file file-doc \
             findutils findutils-doc \
             fping fping-doc arping arping-doc ioping ioping-doc \
