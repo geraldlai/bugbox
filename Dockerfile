@@ -35,6 +35,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
 # procps: ps, top, vmstat, w, kill, free, etc. (fix busybox overrides)
 # psmisc: fuser, pstree, killall, peekfd
 # pv: pipe monitor
+# ripgrep: (vs grep, ag/the_silver_searcher)
 # shadow: chsh, passwd, useradd, groupadd, etc. (not installed)
 # socat: (vs netcat)
 # sysstat: sar, mpstat, pidstat, iostat, sa, sadf, etc. (multi perf monitor)
@@ -101,6 +102,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
             pv pv-doc \
             python2 python2-doc \
             psmisc psmisc-doc \
+            ripgrep ripgrep-doc \
             rsync rsync-doc \
             sed sed-doc \
             socat socat-doc \
