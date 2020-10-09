@@ -83,6 +83,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
             libressl libressl-doc \
             lsof lsof-doc \
             man-pages mdocml-doc \
+            mitmproxy \
             mosh mosh-doc \
             mtr mtr-doc \
             nano nano-doc \
